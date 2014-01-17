@@ -1,0 +1,22 @@
+<head>
+  <title>Chat Application</title>
+</head>
+
+<body>
+  Chat Application using Meteor Streams.</br>
+  {{> chatWindow}}
+</body>
+
+<template name="chatWindow">
+  Name: 
+  <input type="text" id="name"/> 
+  <div id="recordOfMessages" style="height: 200px; max-height: 200px; width: 350px; overflow: scroll; border: solid 2px #999;">
+    {{#each messages}}
+      {{message}}
+      <br/>
+    {{/each}}
+  </div>
+  Message: 
+  <input type="text" id="message" onkeydown="if (event.keyCode == 13) document.getElementById('sendMessage').click()"/> 
+  <input type="button" id="sendMessage" value="Send" />
+</template>
